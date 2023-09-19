@@ -1,0 +1,15 @@
+@media(max-width: 991px) {
+    .myslider {
+        transform: translateY(0);
+        padding: 0;
+    }
+}
+
+
+
+@media(min-width: 992px) {
+    .myslider {
+        transform: translateY(-25%);
+        padding: 50px
+    }
+}

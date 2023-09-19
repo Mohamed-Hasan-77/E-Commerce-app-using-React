@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url("./finalProject assets/light-patten.svg");
+  /* background-image: linear-gradient(45deg,
+      rgba(245, 70, 66, 0.1),
+      rgba(8, 83, 156, 0.1)), url("./finalProject assets/light-patten.svg"); */
+  /* background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(0, 0, 0, 0.171)), url("./finalProject assets/light-patten.svg"); */
+  background-position: center center;
+  background-size: contain;
+  /* background-repeat: repeat; */
+  /* background-attachment: fixed; */
+}
+
+
+footer {
+  background-color: #eee;
+}
