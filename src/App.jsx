@@ -84,7 +84,7 @@ export default function App() {
         { path: "favorites", element: <ProtectedRoute> <Favorites  />  </ProtectedRoute>  },
         { path: "OrderDetails", element: <ProtectedRoute> <OrderDetails  />  </ProtectedRoute>  },
         { path: "allorders", element: <ProtectedRoute> <Orders crrUser = {crrUser}  />  </ProtectedRoute>  },
-        { path: "Prodetails/:id", element: <ProtectedRoute> <CartContextProvider> <ProDetails/> </CartContextProvider> </ProtectedRoute> },
+        { path: "Prodetails/:id", element:  <CartContextProvider> <ProDetails crrUser = {crrUser}/> </CartContextProvider>  },
         { path: "cart/", element: <ProtectedRoute> <CartContextProvider> <Cart/> </CartContextProvider> </ProtectedRoute> },
         { path: "login", element: <Login getUserData = {getUserData}  crrUser = {crrUser} /> },
         { path: "fogotpassword", element: <ForgetPass  /> },
