@@ -137,6 +137,17 @@ async function addToWishList(id) {
 
 
 function logInFirst() {
+
+
+  document.querySelector('.add').style.display = 'none';
+  document.querySelector('.mySpinner').style.display = 'block';
+  setTimeout(() => {
+    document.querySelector('.add').style.display = 'inline';
+    document.querySelector('.mySpinner').style.display = 'none';
+
+}, 2000);
+
+
   $('.loginOrSign').fadeIn(1000, function() {
     
     setTimeout(() => {
