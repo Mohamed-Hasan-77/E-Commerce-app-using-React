@@ -8,7 +8,7 @@ export default function Layout(  {crrUser, clearUserData}) {
   return (
     <>
 
-    <div className="free  text-white bg-primary fs-6 text-center"> Now for Limited time free shipping on all orders save up to <span className="text-warning fw-bold"> 150$</span> </div>
+    <div className="free  text-white bg-primary fs-6 text-center py-1"> Now for Limited time free shipping on all orders save up to <span className="text-warning fw-bold"> 150$</span> </div>
     <CartContextProvider>  <Navbar clearUserData ={clearUserData}  crrUser = {crrUser}  /> </CartContextProvider>  
 
       <Outlet />

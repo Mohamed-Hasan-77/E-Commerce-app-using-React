@@ -8,12 +8,12 @@ import $ from 'jquery'
 import { Helmet } from "react-helmet";
 
 
-export default function ProDetails() {
+export default function ProDetails({crrUser}) {
 
 
 
 
-  const {addProductToCart} = useContext(cartContext);
+  const {addProductToCart, } = useContext(cartContext);
 
   const {id} = useParams();
   const [productsDetail, setProductsDetail] = useState(null);
@@ -134,6 +134,18 @@ async function addToWishList(id) {
 }
 
 
+
+
+function logInFirst() {
+  $('.loginOrSign').fadeIn(1000, function() {
+    
+    setTimeout(() => {
+        $('.loginOrSign').fadeOut(1000);
+    }, 2000);
+    });
+}
+
+
   useEffect(function() {
     getProductDetails();
 
@@ -196,11 +208,24 @@ async function addToWishList(id) {
                       </div>                   
                       </div> */}
 
+
+                      {crrUser ? <>
+                        <div className="col-12 mt-3 mt-md-0 position-relative"> 
+                            <button onClick={() => addMyProduct(productsDetail.id)} className={`btn btn-primary addToCart w-100`}> <i  style={{'display': 'none'}} className={`fa-solid fa-spinner fa-spin mySpinner my-1`}></i> <span className="add" > Add to Cart </span> </button>
+                            <div style={{'display': 'none', 'zIndex': '10000', 'width': 'fit-content' }}  className=" shadow mb-4 mx-3 successful rounded px-3 py-2 position-fixed bg-white bottom-0  start-0 text-center "> <i className="fa-solid fa-thumbs-up fa-bounce text-success"></i> Product Was Added to your cart  </div>   
+                            <div style={{'display': 'none', 'zIndex': '10000', 'width': 'fit-content' }}  className=" shadow mb-4 mx-3 wrong rounded px-3 py-2 position-fixed bg-white bottom-0  start-0 text-center "> <i className="fa-solid fa-circle-xmark text-danger"></i> something wrong happened </div>   
+                        </div>
+                      
+                      </> : <>
+                      
                       <div className="col-12 mt-3 mt-md-0 position-relative"> 
-                        <button onClick={() => addMyProduct(productsDetail.id)} className={`btn btn-primary addToCart w-100`}> <i  style={{'display': 'none'}} className={`fa-solid fa-spinner fa-spin mySpinner my-1`}></i> <span className="add" > Add to Cart </span> </button>
-                        <div style={{'display': 'none', 'zIndex': '10000', 'width': 'fit-content' }}  className=" shadow mb-4 mx-3 successful rounded px-3 py-2 position-fixed bg-white bottom-0  start-0 text-center "> <i className="fa-solid fa-thumbs-up fa-bounce text-success"></i> Product Was Added to your cart  </div>   
-                        <div style={{'display': 'none', 'zIndex': '10000', 'width': 'fit-content' }}  className=" shadow mb-4 mx-3 wrong rounded px-3 py-2 position-fixed bg-white bottom-0  start-0 text-center "> <i className="fa-solid fa-circle-xmark text-danger"></i> something wrong happened </div>   
-                    </div>
+                          <button onClick={() => logInFirst()} className={`btn btn-primary addToCart w-100`}> <i  style={{'display': 'none'}} className={`fa-solid fa-spinner fa-spin mySpinner my-1`}></i> <span className="add" > Add to Cart </span> </button>
+                          <div style={{'display': 'none', 'zIndex': '10000', 'width': 'fit-content' }}  className=" shadow position-absolute  loginOrSign rounded px-3 py-2 w-100 bg-white top-100  start-0 text-center "> <i class="fa-regular fa-face-smile text-success"></i> Please Login or SignUp First </div>   
+                      </div>
+                      
+                      
+                      </>}
+                      
                 </div>
 
                 <div className="d-flex">
@@ -208,7 +233,11 @@ async function addToWishList(id) {
                     <p className=" text-secondary mt-3 "> In stock! Ships in 5 – 10 business days </p>
                     <p className="text-secondary mb-3 "> 100% secure checkout </p>
                   </div>
-                  <div className="wishlist mt-3 text-end"> <i onClick={ ()=> wishlist(productsDetail.id)} className=" favorite fa-solid fa-heart text-secondary fs-3" ></i> </div>
+
+                  {crrUser ? <>
+                    <div className="wishlist mt-3 text-end"> <i onClick={ ()=> wishlist(productsDetail.id)} className=" favorite fa-solid fa-heart text-secondary fs-3" ></i> </div>
+                  </> : <></>}
+              
                 </div>
             </div>
         </div>
