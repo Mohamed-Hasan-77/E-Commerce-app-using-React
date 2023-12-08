@@ -16,6 +16,7 @@ export default function Brands() {
 
         try {
             const {data} =  await axios.get("https://ecommerce.routemisr.com/api/v1/brands");
+            console.log(data);
             setAllBrands(data.data);      
         } catch(err) {
             $('.wrong').fadeIn(1000, function() {
