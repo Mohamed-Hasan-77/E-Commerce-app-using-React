@@ -163,7 +163,7 @@ function logInFirst() {
   }, []);
 
   return <>
-  {productsDetail ?     <div className="container p-4">
+  {productsDetail ?    <div className="container p-4">
 
           <Helmet>
                   <title> {productsDetail.title} </title>
@@ -191,9 +191,9 @@ function logInFirst() {
                     <div className="rating d-flex align-items-center fs-6 fw-bold "> {productsDetail.ratingsAverage }  <i className="fa-solid fa-star text-warning ms-1"></i> </div>
                 </div>
                 
-            <p className="my-3 " >  <span className="text-danger"> {productsDetail.category.name } </span> </p>
+            <p className="my-3 " >  <span className="text-danger"> {productsDetail?.category.name } </span> </p>
             </div>
-            <p className="my-3 " > Brand :<span className="text-danger"> {productsDetail.brand.name } </span> </p>
+            <p className="my-3 " > Brand :<span className="text-danger"> {productsDetail?.brand.name } </span> </p>
             <div className="desc my-3 ">
 
 
