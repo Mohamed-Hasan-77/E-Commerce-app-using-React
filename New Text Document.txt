@@ -1,6 +1,0 @@
-"start": "react-scripts start",
-    "build": "react-scripts build",
-
-
-  "homepage": "https://Mohamed-Hasan-77.github.io/E-Commerce-FreshCart-Store",
-

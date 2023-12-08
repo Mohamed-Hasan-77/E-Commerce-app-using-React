@@ -25,9 +25,11 @@ import UpdatePass from "./Components/UpdatePass/UpdatePass";
 
 
 
+
+
 export default function App() {
 
-
+// current User
   const [crrUser, setCrrUser] = useState(null);
 
   function getUserData() {
